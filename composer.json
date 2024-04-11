@@ -1,11 +1,11 @@
 {
-    "name": "coufal/laravel-http-schedule-trigger",
-    "description": "A Laravel package to trigger the scheduler via HTTP endpoints.",
+    "name": "coufal/laravel-http-cronjob",
+    "description": "A Laravel package to trigger the scheduler via HTTP endpoint.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Coufal\\LaravelHttpScheduleTrigger\\": "src/"
+            "Coufal\\LaravelHttpCronjob\\": "src/"
         }
     },
     "authors": [
@@ -26,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Coufal\\LaravelHttpScheduleTrigger\\Providers\\ScheduledTaskServiceProvider"
+                "HttpCronjobServiceProvider"
             ]
         }
     },

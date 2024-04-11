@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Coufal\LaravelHttpScheduleTrigger\Http\Controllers\ScheduledTaskController;
+use Coufal\LaravelHttpCronjob\Http\Controllers\ScheduledTaskController;
 
-Route::middleware(['Coufal\LaravelHttpScheduleTrigger\Http\Middleware\AuthenticateScheduledRequest'])->group(function () {
-  Route::post(config('http-schedule-trigger.endpoint'), [ScheduledTaskController::class, 'run']);
+Route::middleware(['Coufal\LaravelHttpCronjob\Http\Middleware\AuthenticateHttpCronjobRequest'])->group(function () {
+  Route::post(config('http-cronjob.endpoint'), [ScheduledTaskController::class, 'run']);
 });

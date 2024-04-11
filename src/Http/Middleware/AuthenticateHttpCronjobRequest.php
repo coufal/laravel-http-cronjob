@@ -1,14 +1,14 @@
 <?php
 
-namespace Coufal\LaravelHttpScheduleTrigger\Http\Middleware;
+namespace Coufal\LaravelHttpCronjob\Http\Middleware;
 
 use Closure;
 
-class AuthenticateScheduledRequest
+class AuthenticateHttpCronjobRequest
 {
   public function handle($request, Closure $next)
   {
-    $expectedToken = config('http-schedule-trigger.token');
+    $expectedToken = config('http-cronjob.token');
 
     // Checks whether a token is set and whether the Authorization header contains the expected token.
     if (empty($expectedToken) || $request->header('Authorization') !== 'Bearer ' . $expectedToken) {

@@ -1,10 +1,10 @@
-# Laravel HTTP Schedule Trigger
+# Laravel HTTP Cronjob
 
 ## Description
 
-This library enables a Laravel application to trigger scheduled tasks via an HTTP request. 
-By publishing a specific route within your application, this package allows for the execution of Laravel's scheduler from an external source,
-such as a web-based cron job service. 
+This library enables a Laravel application to trigger scheduled tasks via an HTTP request.
+This package enables Laravel's scheduler to be triggered externally, for instance, 
+via web-based cron job services provided by hosting companies such as IONOS or All-Inkl.com. 
 Authentication is managed through a Bearer token, which can be set via an environment variable, ensuring secure access to this functionality.
 
 ## Installation
@@ -12,7 +12,7 @@ Authentication is managed through a Bearer token, which can be set via an enviro
 To install the package, run the following command in your Laravel project:
 
 ```bash
-composer require coufal/laravel-http-schedule-trigger
+composer require coufal/laravel-http-cronjob
 ```
 
 ## Configuration
@@ -20,7 +20,7 @@ composer require coufal/laravel-http-schedule-trigger
 After installation, publish the package's configuration file to your project:
 
 ```bash
-php artisan vendor:publish --provider="Coufal\LaravelHttpScheduleTrigger\Providers\ScheduledTaskServiceProvider"
+php artisan vendor:publish --provider="Coufal\LaravelHttpCronjob\Providers\HttpCronjobServiceProvider"
 ```
 
 This will publish a configuration file to `config/scheduled-tasks.php`, where you can customize the settings.

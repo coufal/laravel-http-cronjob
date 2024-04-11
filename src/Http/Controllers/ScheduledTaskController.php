@@ -1,6 +1,6 @@
 <?php
 
-namespace Coufal\LaravelHttpScheduleTrigger\Http\Controllers;
+namespace Coufal\LaravelHttpCronjob\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;

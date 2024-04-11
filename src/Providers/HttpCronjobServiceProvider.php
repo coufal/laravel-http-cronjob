@@ -1,10 +1,10 @@
 <?php
 
-namespace Coufal\LaravelHttpScheduleTrigger\Providers;
+namespace Coufal\LaravelHttpCronjob\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ScheduledTaskServiceProvider extends ServiceProvider
+class HttpCronjobServiceProvider extends ServiceProvider
 {
   public function boot()
   {
@@ -19,12 +19,12 @@ class ScheduledTaskServiceProvider extends ServiceProvider
   public function register()
   {
     $this->mergeConfigFrom(
-      __DIR__ . '/../../config/http-schedule-trigger.php', 'http-schedule-trigger'
+      __DIR__ . '/../../config/http-cronjob.php', 'http-cronjob'
     );
 
     // Publish configuration
     $this->publishes([
-      __DIR__ . '/../../config/http-schedule-trigger.php' => config_path('http-schedule-trigger.php'),
+      __DIR__ . '/../../config/http-cronjob.php' => config_path('http-cronjob.php'),
     ]);
   }
 }
