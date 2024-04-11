@@ -20,7 +20,7 @@ class ScheduledTaskServiceProvider extends ServiceProvider
   {
     // Publish configuration
     $this->publishes([
-      __DIR__.'/../config/scheduled-tasks.php' => config_path('scheduled-tasks.php'),
+      __DIR__.'/../../config/scheduled-tasks.php' => config_path('scheduled-tasks.php'),
     ]);
   }
 }
