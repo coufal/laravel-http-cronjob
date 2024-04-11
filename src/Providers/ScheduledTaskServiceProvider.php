@@ -18,6 +18,10 @@ class ScheduledTaskServiceProvider extends ServiceProvider
 
   public function register()
   {
+    $this->mergeConfigFrom(
+      __DIR__.'/../../config/scheduled-tasks.php', 'scheduled-tasks'
+    );
+
     // Publish configuration
     $this->publishes([
       __DIR__.'/../../config/scheduled-tasks.php' => config_path('scheduled-tasks.php'),
