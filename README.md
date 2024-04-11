@@ -30,12 +30,12 @@ This will publish a configuration file to `config/scheduled-tasks.php`, where yo
 Configure the Bearer token and a custom endpoint in your .env file:
 
 ```
-HTTP_SCHEDULE_TRIGGER_TOKEN=your-secure-token-here
-HTTP_SCHEDULE_TRIGGER_ROUTE=/custom/scheduler/endpoint
+HTTP_CRONJOB_TOKEN=your-secure-token-here
+HTTP_CRONJOB_ROUTE=/custom/scheduler/endpoint
 ```
 
-- `HTTP_SCHEDULE_TRIGGER_TOKEN` is used for authenticating the HTTP requests to the scheduled tasks route.
-- `HTTP_SCHEDULE_TRIGGER_ROUTE` allows you to define a custom route for triggering scheduled tasks. If not set, the default route `/scheduler/cronjob` is used.
+- `HTTP_CRONJOB_TOKEN` is used for authenticating the HTTP requests to the scheduled tasks route.
+- `HTTP_CRONJOB_ROUTE` allows you to define a custom route for triggering scheduled tasks. If not set, the default route `/scheduler/cronjob` is used.
 
 This flexibility ensures that you can secure and customize the HTTP cronjob endpoint according to your project's needs.
 
