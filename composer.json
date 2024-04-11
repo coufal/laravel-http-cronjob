@@ -2,6 +2,7 @@
     "name": "coufal/laravel-http-schedule-trigger",
     "description": "A Laravel package to trigger the scheduler via HTTP endpoints.",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Coufal\\LaravelHttpScheduleTrigger\\": "src/"
