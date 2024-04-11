@@ -41,11 +41,21 @@ This flexibility ensures that you can secure and customize the HTTP cronjob endp
 
 ## Usage
 
+### POST Request
+
 Once configured, you can trigger the Laravel scheduler by making a POST request to the published route (`/scheduler/cronjob` by default) 
 with the correct Bearer token in the Authorization header:
 
 ```
 Authorization: Bearer your-secure-token-here
+```
+
+### GET Request
+
+Alternatively, you can trigger the Laravel scheduler by making a GET request to the published route (`/scheduler/cronjob` by default)
+
+```
+/custom/scheduler/endpoint?token=your-secure-token-here
 ```
 
 This can be set up as a web-based cron job pointing to this route to trigger your scheduled tasks remotely.

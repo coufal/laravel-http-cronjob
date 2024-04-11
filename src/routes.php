@@ -5,4 +5,5 @@ use Coufal\LaravelHttpCronjob\Http\Controllers\ScheduledTaskController;
 
 Route::middleware(['Coufal\LaravelHttpCronjob\Http\Middleware\AuthenticateHttpCronjobRequest'])->group(function () {
   Route::post(config('http-cronjob.endpoint'), [ScheduledTaskController::class, 'run']);
+  Route::get(config('http-cronjob.endpoint'), [ScheduledTaskController::class, 'run']);
 });

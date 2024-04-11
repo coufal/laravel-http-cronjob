@@ -10,8 +10,26 @@ class AuthenticateHttpCronjobRequest
   {
     $expectedToken = config('http-cronjob.token');
 
-    // Checks whether a token is set and whether the Authorization header contains the expected token.
-    if (empty($expectedToken) || $request->header('Authorization') !== 'Bearer ' . $expectedToken) {
+    if(empty($expectedToken)) {
+      return response('Unauthorized', 401);
+    }
+
+    // Determine the token based on the request method
+    if ($request->isMethod('post')) {
+      // Check for Bearer token in Authorization header
+      $token = $request->bearerToken();
+      $tokenValid = $token === $expectedToken;
+    } elseif ($request->isMethod('get')) {
+      // Check for token in the query string
+      $token = $request->query('token');
+      $tokenValid = $token === $expectedToken;
+    } else {
+      // If not GET or POST, automatically reject
+      return response('Method not allowed', 405);
+    }
+
+    // Validate the token
+    if (!$tokenValid) {
       // Unauthorized access, return 401
       return response('Unauthorized', 401);
     }
