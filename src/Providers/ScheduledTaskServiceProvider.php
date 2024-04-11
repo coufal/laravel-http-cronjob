@@ -9,7 +9,7 @@ class ScheduledTaskServiceProvider extends ServiceProvider
   public function boot()
   {
     // Routen laden
-    $this->loadRoutesFrom(__DIR__.'/routes.php');
+    $this->loadRoutesFrom(__DIR__.'/../routes.php');
 
     // Register Middleware
     $router = $this->app['router'];
