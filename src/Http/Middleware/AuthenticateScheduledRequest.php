@@ -8,7 +8,7 @@ class AuthenticateScheduledRequest
 {
   public function handle($request, Closure $next)
   {
-    $expectedToken = config('scheduled-tasks.token');
+    $expectedToken = config('http-schedule-trigger.token');
 
     // Checks whether a token is set and whether the Authorization header contains the expected token.
     if (empty($expectedToken) || $request->header('Authorization') !== 'Bearer ' . $expectedToken) {

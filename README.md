@@ -30,7 +30,7 @@ This will publish a configuration file to `config/scheduled-tasks.php`, where yo
 Set the Bearer token in your `.env` file:
 
 ```
-SCHEDULED_TASKS_TOKEN=your-secure-token-here
+HTTP_SCHEDULE_TRIGGER_TOKEN=your-secure-token-here
 ```
 
 This token will be used for authenticating the HTTP requests to the scheduled tasks route.

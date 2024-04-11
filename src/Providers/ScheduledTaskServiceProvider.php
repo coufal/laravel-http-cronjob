@@ -13,18 +13,18 @@ class ScheduledTaskServiceProvider extends ServiceProvider
 
     // Register Middleware
     $router = $this->app['router'];
-    $router->aliasMiddleware('authenticate.scheduled.request', Http\Middleware\AuthenticateScheduledRequest::class);
+    $router->aliasMiddleware('authenticate.http_cronjob.request', Http\Middleware\AuthenticateScheduledRequest::class);
   }
 
   public function register()
   {
     $this->mergeConfigFrom(
-      __DIR__.'/../../config/scheduled-tasks.php', 'scheduled-tasks'
+      __DIR__ . '/../../config/http-schedule-trigger.php', 'http-schedule-trigger'
     );
 
     // Publish configuration
     $this->publishes([
-      __DIR__.'/../../config/scheduled-tasks.php' => config_path('scheduled-tasks.php'),
+      __DIR__ . '/../../config/http-schedule-trigger.php' => config_path('http-schedule-trigger.php'),
     ]);
   }
 }
