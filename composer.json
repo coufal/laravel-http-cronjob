@@ -1,0 +1,36 @@
+{
+    "name": "coufal/laravel-http-schedule-trigger",
+    "description": "A Laravel package to trigger the scheduler via HTTP endpoints.",
+    "type": "library",
+    "version": "0.1.0",
+    "autoload": {
+        "psr-4": {
+            "Coufal\\LaravelHttpScheduleTrigger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dennis Coufal",
+            "email": "dennis.coufal@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0",
+        "illuminate/routing": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Coufal\\LaravelHttpScheduleTrigger\\Providers\\ScheduledTaskServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
