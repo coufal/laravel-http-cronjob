@@ -2,10 +2,10 @@
 
 namespace Coufal\LaravelHttpCronjob\Http\Controllers;
 
-use Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Log;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 
 class ScheduledTaskController extends BaseController
 {
