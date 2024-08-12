@@ -11,7 +11,7 @@ class AuthenticateHttpCronjobRequest
     $expectedToken = config('http-cronjob.token');
 
     if(empty($expectedToken)) {
-      return response('Unauthorized', 401);
+      return response('Unauthorized - Please define a token via HTTP_CRONJOB_TOKEN in your .env file', 401);
     }
 
     // Determine the token based on the request method
