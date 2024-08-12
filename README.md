@@ -19,7 +19,7 @@ php artisan vendor:publish --provider="Coufal\LaravelHttpCronjob\Providers\HttpC
 ```
 
 Configure the Bearer token and a custom endpoint in your `.env` file. 
-A random token may be generated using: `pwgen --secure 32`.
+A random token may be generated using: `pwgen --secure 256`.
 
 ```
 HTTP_CRONJOB_TOKEN=your-secure-token-here
@@ -54,7 +54,7 @@ This can be set up as a web-based cron job pointing to this route to trigger you
 
 Ensure that your Bearer token is kept secure and is only known to the services that require access to trigger the scheduler.
 
-Currently, there is no protection against brute force attacks against the API endpoint. 
+Currently, there is no protection against brute force attacks against the API endpoint, apart from using a long token.
 
 ## Contributing
 
