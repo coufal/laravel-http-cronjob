@@ -12,10 +12,10 @@ class ScheduledTaskController extends BaseController
     public function run(Request $request)
     {
         $exitCode = Artisan::call('schedule:run');
-        $output = Artisan::output();
+        $output = Artisan::output();  // if output contains FAIL, the scheduled tasks failed
         Log::debug($output);
 
-        if ($exitCode !== 0) {
+        if ($exitCode !== 0 || str_contains($output, 'FAIL')) {
             // Log error if schedule:run was not successful
             Log::error('Scheduled tasks execution failed with exit code: '.$exitCode, ['output' => $output]);
 
